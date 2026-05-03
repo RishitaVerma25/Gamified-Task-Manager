@@ -2,29 +2,31 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useUserState } from './UserContext';
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, onClose }) {
   const state = useUserState();
   
   if (!state || !state.userProfile) {
-    return <aside className="sidebar">Loading...</aside>;
+    return <aside className={`sidebar ${isOpen ? 'open' : ''}`}>Loading...</aside>;
   }
 
-  const { userProfile, leaderboard, achievements, xpPercent, XP_PER_LEVEL } = state;
-
+  const { userProfile, leaderboard, achievements, xpPercent } = state;
   const avatar = userProfile.avatar || "👤";
 
   return (
-    <aside className="sidebar">
-      <NavLink to="/" className="logo">
-        <div className="logo-dot" />
-        QuestBoard
-      </NavLink>
+    <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
+      <div className="sidebar-header">
+        <NavLink to="/" className="logo" onClick={onClose}>
+          <div className="logo-dot" />
+          QuestBoard
+        </NavLink>
+        <button className="mobile-close-btn" onClick={onClose}>✕</button>
+      </div>
 
       <nav className="nav-group">
-        <NavLink to="/" end className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+        <NavLink to="/" end className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`} onClick={onClose}>
           🏠 Dashboard
         </NavLink>
-        <NavLink to="/shop" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+        <NavLink to="/shop" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`} onClick={onClose}>
           🛍️ Rewards
         </NavLink>
       </nav>

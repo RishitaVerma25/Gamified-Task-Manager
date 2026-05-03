@@ -1,16 +1,21 @@
 import React from 'react';
 import { useUserState, useUserDispatch } from './UserContext';
 
-export default function TopStats() {
+export default function TopStats({ onMenuClick }) {
   const { userProfile, isDarkMode } = useUserState();
   const { toggleDarkMode } = useUserDispatch();
 
   return (
     <header className="top-bar">
-      <div className="breadcrumbs">
-        <span className="breadcrumb-muted">DASHBOARD</span>
-        <span className="breadcrumb-separator">/</span>
-        <span className="breadcrumb-active">OVERVIEW</span>
+      <div className="top-bar-left">
+        <button className="mobile-menu-btn" onClick={onMenuClick}>
+          ☰
+        </button>
+        <div className="breadcrumbs">
+          <span className="breadcrumb-muted">DASHBOARD</span>
+          <span className="breadcrumb-separator">/</span>
+          <span className="breadcrumb-active">OVERVIEW</span>
+        </div>
       </div>
 
       <div className="top-stat-group">

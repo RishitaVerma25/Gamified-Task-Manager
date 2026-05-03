@@ -1,16 +1,65 @@
-# React + Vite
+# 🎮 Gamified Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-performance, gamified task management dashboard built strictly within the core React syllabus. Level up your productivity with a premium "Obsidian Glass" aesthetic.
 
-Currently, two official plugins are available:
+## ✨ Core Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### 🛡️ Operative Dashboard
+- **Kanban Board**: Manage quests through a native Drag-and-Drop interface (Unit 1/3).
+- **Real-time Stats**: Track XP, Gold, Level, and Streak progression (Unit 4).
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop using Pure CSS (Unit 5).
 
-## React Compiler
+### 🎮 Game Mechanics
+- **Progression System**: Level up every 1000 XP with custom animations and rewards.
+- **Boss Battles**: Defeat the "Procrastination Dragon" by completing high-XP tasks.
+- **Requisition Hub**: Spend earned Gold on new operative avatars (Fetched from Dicebear API).
+- **Streak Multipliers**: Maintain daily operations to build your streak.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🛠️ Technical Implementation (Syllabus Compliant)
+- **State Management**: Context API for global user state (Unit 4).
+- **Data Persistence**: `localStorage` integration for persistent profile and quest data (Unit 2).
+- **Routing**: `react-router-dom` (HashRouter) for seamless view transitions (Unit 4).
+- **Performance**: `React.lazy` and `Suspense` for component code-splitting (Unit 5).
+- **API Integration**: Native `Fetch API` for motivational intelligence feeds (Unit 4).
+- **Styling**: 100% Pure CSS (Global & Variable-based) - **No Tailwind CSS or external UI libraries**.
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Installation
+
+1. Navigate to the project directory:
+```powershell
+cd Gamified-Task-Manager
+```
+
+2. Install approved dependencies:
+```powershell
+npm install
+```
+
+3. Start the command center:
+```powershell
+npm run dev
+```
+
+## 📱 Tech Stack
+- **React 19**: Frontend framework.
+- **Vite**: Build tool.
+- **React Router 7**: Navigation.
+- **Canvas-Confetti**: Visual celebrations (allowed exception).
+- **Pure CSS**: Styling and animations.
+
+## 📝 Project Structure
+```
+Gamified-Task-Manager/
+├── src/
+│   ├── App.jsx          # Layout & Routing
+│   ├── UserContext.jsx  # Global Game Logic
+│   ├── App.css          # Core Styling & Animations
+│   ├── index.css        # Global Variables & Reset
+│   └── components/      # Modular UI Elements
+```
+
+---
+
+**Built for performance. Optimized for productivity. Strictly Syllabus Compliant.** 🚀

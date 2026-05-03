@@ -31,12 +31,20 @@ function Dashboard({ onNewQuest }) {
 
 function AppLayout() {
   const [isNewQuestOpen, setIsNewQuestOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+  const closeSidebar = () => setIsSidebarOpen(false);
 
   return (
-    <div className="app-container">
-      <Sidebar />
+    <div className={`app-container ${isSidebarOpen ? 'sidebar-open' : ''}`}>
+      {/* Mobile Overlay */}
+      {isSidebarOpen && <div className="sidebar-overlay" onClick={closeSidebar} />}
+      
+      <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
+      
       <main className="main-content">
-        <TopStats />
+        <TopStats onMenuClick={toggleSidebar} />
         <div className="content-scroll">
           <Suspense fallback={<div className="loading-fallback">Loading Command Center...</div>}>
             <Routes>
